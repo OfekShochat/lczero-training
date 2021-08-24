@@ -516,7 +516,8 @@ class ChunkParser:
         applying a random symmetry on the way.
         """
         for r in gen:
-            yield self.convert_v6_to_tuple(r)
+            if f := self.convert_v6_to_tuple(r):
+                yield f
 
     def batch_gen(self, gen):
         """
