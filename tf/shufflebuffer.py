@@ -60,6 +60,8 @@ class ShuffleBuffer:
 
             If the buffer is not yet full, returns None
         """
+        if len(item) != self.elem_size:
+            return
         assert len(item) == self.elem_size, len(item)
         # putting the new item in a random location, and appending
         # the displaced item to the end of the buffer achieves a full
