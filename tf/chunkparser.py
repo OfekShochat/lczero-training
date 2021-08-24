@@ -327,6 +327,8 @@ class ChunkParser:
             plies_left = invariance_info
         plies_left = struct.pack('f', plies_left)
 
+        if input_format != self.expected_input_format:
+            return
         assert input_format == self.expected_input_format
 
         # Unpack bit planes and cast to 32 bit float
