@@ -70,6 +70,10 @@ class Net:
         else:
             self.pb.format.network_format.output = pb.NetworkFormat.OUTPUT_CLASSICAL
 
+    def set_experiment(self, experiment):
+        assert experiment < 2 ** 16
+        self.pb.min_version.major = LC0_MAJOR + (experiment << 16)
+
     def set_movesleftformat(self, moves_left):
         self.pb.format.network_format.moves_left = moves_left
 

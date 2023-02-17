@@ -124,6 +124,8 @@ class TFProcess:
         # Sparse training
         self.sparse = self.cfg["training"].get("sparse", False)
 
+        self.net.set_experiment(self.cfg["experiment"])
+
         default_activation = self.cfg["model"].get(
             "default_activation", "relu")
         if default_activation == "relu":
